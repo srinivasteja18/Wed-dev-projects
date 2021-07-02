@@ -1,0 +1,125 @@
+﻿
+html {
+    background-color: hsl(212,25%,10%);
+    max-height: 200px;
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+h1 {
+    font-family:'Lucida Handwriting';
+    font-size:100px;
+    margin:10px;
+    text-align:center;
+    color:white;
+}
+.blocks {
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+}
+.panel {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(0,0,0,0.4) 2px 2px inset;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+}
+.panel > * {
+    width: 100%;
+    transition: transform 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex:1;
+    align-items:center;
+    align-content:center;
+}
+.panel > *:first-child {
+    transform: translateY(-100%);
+ }
+.panel > *:last-child {
+    transform: translateY(100%);
+ }
+.panel p:nth-child(2){
+    font-size:30px;
+}
+
+
+.three {
+    background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+}
+
+.two {
+    background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+
+.one {
+    background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+}
+
+.four {
+    background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+
+.five {
+    background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
+
+p {
+    font-size: 20px;
+    text-shadow: 0 0 2px black;
+    font-family: Segoe Script;
+    color: white;
+}
+
+.open p:first-child{
+    transform:translateY(0);
+    font-size:50px;
+}
+.open p:last-child {
+    transform: translateY(0);
+    font-size: 50px;
+}
+.open{
+    flex:5;
+    transition:0.5s;
+}
+
+@media (max-width : 880px){
+    .blocks{
+        flex-direction:column;
+    }
+    .panel > *:first-child {
+        transform: translateX(-100%);
+    }
+    .panel > *:last-child {
+        transform: translateX(100%);
+    }
+    .open p:first-child {
+        transform: translateX(0);
+        font-size: 50px;
+    }
+    .open p:last-child {
+        transform: translateX(0);
+        font-size: 50px;
+    }
+    .panel {
+        display: flex;
+        transition: 0.5s,flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    }
+    .panel >* {
+        transition: transform 0.5s;
+    }
+}
+
