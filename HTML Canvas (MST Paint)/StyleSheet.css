@@ -1,0 +1,40 @@
+﻿:root{
+    --colourvar: #000000;
+}
+
+html {
+    font-size:1em;
+}
+body{
+    border:1px solid black;
+    overflow:auto;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(212,25%,10%);
+}
+h1 {
+    font-family:'Segoe UI';
+    font-size: 2em;
+    color: white;
+}
+.selectors {
+    background-color: hsl(211 47% 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 1rem;
+    font-family: 'Segoe UI';
+    font-size: 1rem;
+}
+
+.rainbow{
+    margin:0rem 0rem;
+}
+label{
+    margin:0rem 2rem;
+}
+
