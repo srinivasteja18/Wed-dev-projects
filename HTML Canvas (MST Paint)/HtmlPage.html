@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+</head>
+<body>
+
+    <header class="title">
+        <h1> MST Paint </h1>
+    </header>
+    <div class="selectors">
+        <input class="rainbow" type="checkbox" />
+        <label> Rainbow color</label>
+        <label> Colour :</label>
+        <input class="color" value="hsl(212,100%,50%)" type="color" />
+        <label> Thickness :</label>
+        <input class="thick" value="1" type="range" min="1" max="50" />
+
+    </div>
+    <div>
+        <canvas id="draw" width="1500" height="800"></canvas>
+    </div>
+
+    <script src="JavaScript.js" >
+    </script>
+
+</body>
+</html>
