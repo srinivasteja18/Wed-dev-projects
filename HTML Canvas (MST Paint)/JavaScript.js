@@ -1,21 +1,26 @@
-﻿const canvas = document.querySelector('#draw');
+const canvas = document.querySelector('#draw');
 const colorInput = document.querySelector('.color');
 const thickInput = document.querySelector('.thick');
 const rainbowInput = document.querySelector('.rainbow');
 const ctx = canvas.getContext('2d');
 document.documentElement.style.setProperty('--colourvar', '#000000');
 var colorVariable = window.getComputedStyle(document.documentElement).getPropertyValue(`--colourvar`);
+
 ctx.width = window.innerWidth;
 ctx.height = window.innerHeight;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.strokeStyle = colorVariable;
 ctx.lineWidth = thickInput.value;
+ctx.fillStyle = "white";
+
+
 
 let it = false;
 let lastX = 0;
 let lastY = 0;
 let hue = 0;
+let background = ctx.backgroundColor;
 
 function drawColors(e) {
     if (rainbowInput.checked == true) {
@@ -48,4 +53,11 @@ function updateColor() {
 }
 colorInput.addEventListener('change', updateColor);
 thickInput.addEventListener('change', drawColors);
+
+function clearCanvas() {
+    ctx.fillStyle = "white";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
 
