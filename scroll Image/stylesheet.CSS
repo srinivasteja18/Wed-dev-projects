@@ -1,0 +1,39 @@
+
+body{
+    background-color: hsl(212,25%,10%);
+    display: grid;
+    grid-template-columns: 2.5fr 5fr 2.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: ". text .";
+}
+
+h1{
+    font-size: 3em;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+}
+.text{
+    font-family: 'Segoe UI';
+    grid-area: text;
+    margin: 1em;
+    background-color: rgb(206, 206, 45);
+    padding: 1em;
+}
+.left{
+    float: left;
+    margin: 1rem;
+    transform: translateX(-30px) ;
+    transition: all .3s;
+    opacity:0;
+}
+.right{
+    float: right;
+    margin: 1rem;
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+.active{
+    transform: translateX(0) ;
+    transition: all .3s;
+    opacity: 1;
+}
