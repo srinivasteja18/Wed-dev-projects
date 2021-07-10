@@ -1,7 +1,12 @@
-const canvas = document.querySelector('#draw');
+﻿const canvas = document.querySelector('#draw');
 const colorInput = document.querySelector('.color');
 const thickInput = document.querySelector('.thick');
 const rainbowInput = document.querySelector('.rainbow');
+const title = document.querySelector('h1');
+const shadow = 8;
+
+console.log(title);
+
 const ctx = canvas.getContext('2d');
 document.documentElement.style.setProperty('--colourvar', '#000000');
 var colorVariable = window.getComputedStyle(document.documentElement).getPropertyValue(`--colourvar`);
@@ -59,5 +64,35 @@ function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
+function changeShadow(e){
+    const width = this.offsetWidth;
+    const height = this.offsetHeight;
+    
+    let x=e.offsetX;
+    let y = e.offsetY;
+    if(this !== e.target){
+        x = x + e.offsetLeft;
+        y = y + e.offsetTop;
+    }
+    x = Math.round(( x/width * shadow) - (shadow/2));
+    y = Math.round(( y/ height * shadow) - (shadow/2));
+
+    title.style.textShadow = `${x}px ${y}px 1px rgba(255,0, 0, 1),
+                              ${-x}px ${y}px 1px rgba(0, 255, 0, 1),
+                              ${x}px ${-y}px 1px rgba(0, 0, 255, 1)`;
+
+
+   // console.log(x,y);
+}
+
+canvas.addEventListener('mousemove',changeShadow);
+
+
+
+
+
+
+
+
 
 
